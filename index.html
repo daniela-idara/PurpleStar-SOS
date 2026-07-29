@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PurpleStar SOS is a cosmic symbolic operating system for astrology, numerology, nomenology, tarot, reflection, and self-exploration.">
+  <meta name="theme-color" content="#16052f">
+  <title>PurpleStar SOS // Symbol Operating System</title>
+  <style>
+    :root{
+      --void:#08000f;--violet:#17072e;--panel:#0e0522;--panel2:#160832;
+      --cyan:#22f5ff;--pink:#ff39c9;--green:#83ff16;--purple:#9b45ff;
+      --lavender:#efd9ff;--muted:#ba9ccb;--gold:#fff36a;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;min-height:100vh;overflow-x:hidden;color:var(--lavender);
+      background:
+        repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 4px),
+        radial-gradient(circle at 50% 15%,rgba(116,45,205,.30),transparent 32%),
+        linear-gradient(180deg,#210b47 0,#100422 55%,#090010 100%);
+      font-family:"Courier New",monospace;
+    }
+    body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:20;background:linear-gradient(rgba(18,16,16,0) 50%,rgba(0,0,0,.13) 50%);background-size:100% 4px;mix-blend-mode:soft-light}
+    canvas{position:fixed;inset:0;width:100%;height:100%;opacity:.12;pointer-events:none;z-index:0}
+    .page{position:relative;z-index:1;width:min(1080px,calc(100% - 28px));margin:0 auto;padding:32px 0 24px}
+    .frame{position:relative;border:2px solid var(--cyan);background:linear-gradient(180deg,rgba(16,5,38,.97),rgba(7,1,17,.98));box-shadow:10px 10px 0 var(--pink),-10px -10px 0 rgba(34,245,255,.23),0 0 50px rgba(155,69,255,.24);padding:clamp(24px,4vw,44px)}
+    .frame::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 51% 44%,rgba(255,106,33,.12),transparent 28%)}
+    .content{position:relative;z-index:1}
+    .build{color:var(--green);font-weight:700;letter-spacing:.14em;font-size:.88rem;margin-bottom:16px}
+    .logo{display:flex;justify-content:center;margin:-8px 0 18px}
+    .logo img{display:block;width:min(360px,72vw);height:auto;filter:drop-shadow(0 0 22px rgba(178,82,255,.48))}
+    h1{margin:0;color:var(--green);font-size:clamp(1.5rem,3.4vw,2.7rem);letter-spacing:.08em;text-transform:uppercase;text-shadow:0 0 10px rgba(131,255,22,.42)}
+    .init{color:var(--green);letter-spacing:.24em;margin:18px 0 8px}
+    .lead{font-size:clamp(1rem,2vw,1.2rem);margin:0 0 28px;line-height:1.6}
+    .hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:18px}
+    .terminal-card,.info-card{border:1px solid rgba(155,69,255,.62);background:rgba(15,3,34,.72);padding:20px}
+    .terminal-card{min-height:220px}
+    .line{display:flex;gap:10px;line-height:1.8;color:var(--muted)}
+    .prompt{color:var(--cyan)}
+    .online{color:var(--green)}
+    .blink{animation:blink 1s steps(2,end) infinite}
+    @keyframes blink{50%{opacity:0}}
+    .feature-list{display:grid;gap:8px;margin-top:16px;color:#e8d8f1;font-size:.9rem}
+    .feature-list span::before{content:"▸ ";color:var(--pink)}
+    .info-card h2{margin:0 0 12px;color:var(--pink);font-size:1rem;letter-spacing:.08em;text-transform:uppercase}
+    .info-card p{margin:0;color:var(--muted);line-height:1.7;font-size:.92rem}
+    .actions{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+    .btn{display:flex;align-items:center;justify-content:center;min-height:64px;padding:14px 18px;border:2px solid var(--cyan);background:#0a0616;color:var(--cyan);font:700 1rem "Courier New",monospace;letter-spacing:.08em;text-decoration:none;text-transform:uppercase;box-shadow:7px 7px 0 var(--pink);transition:transform .12s ease,box-shadow .12s ease,background .12s ease}
+    .btn:hover,.btn:focus-visible{transform:translate(3px,3px);box-shadow:3px 3px 0 var(--pink);background:rgba(34,245,255,.08);outline:none}
+    .btn.primary{background:linear-gradient(180deg,#ff38c9,#ff55d5);color:#090010;border-color:var(--gold);box-shadow:7px 7px 0 var(--cyan)}
+    .btn.primary:hover,.btn.primary:focus-visible{box-shadow:3px 3px 0 var(--cyan)}
+    .nav{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:30px 0 16px;border-top:1px solid rgba(34,245,255,.35);padding-top:16px}
+    .nav a{border:1px solid var(--cyan);padding:13px 10px;color:var(--cyan);text-align:center;text-decoration:none;font-weight:700;text-transform:uppercase;font-size:.86rem}
+    .nav a:hover{background:rgba(34,245,255,.08)}
+    section{scroll-margin-top:20px}
+    .section{border:1px solid rgba(131,255,22,.45);background:rgba(0,8,5,.56);padding:20px;margin-top:14px}
+    .section h2{margin:0 0 16px;color:var(--pink);font-size:1rem;text-transform:uppercase;letter-spacing:.06em}
+    .section p{color:#72ff55;line-height:1.85;margin:0 0 14px}
+    .section p:last-child{margin-bottom:0}
+    .section a{color:var(--cyan);font-weight:700;text-decoration:none}
+    .section a:hover,.section a:focus-visible{text-decoration:underline}
+    footer{text-align:center;color:var(--muted);padding:24px 10px 4px;font-size:.82rem;letter-spacing:.07em}
+    footer a{color:var(--cyan);text-decoration:none}
+    @media(max-width:760px){.hero-grid,.actions{grid-template-columns:1fr}.nav{grid-template-columns:1fr 1fr}.frame{box-shadow:6px 6px 0 var(--pink),-6px -6px 0 rgba(34,245,255,.23)}.page{width:min(100% - 20px,1080px)}.logo{margin-top:0}}
+    @media(max-width:460px){.nav{grid-template-columns:1fr}.build{font-size:.72rem}.frame{padding:20px 16px}.logo img{width:min(300px,82vw)}.btn{font-size:.88rem}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.blink{animation:none}.btn{transition:none}}
+  </style>
+</head>
+<body>
+<canvas id="matrix" aria-hidden="true"></canvas>
+<div class="page">
+  <main class="frame">
+    <div class="content">
+      <div class="build">PURPLESTAR SOS v2.0 // BUILD 2.0.61</div>
+      <div class="logo"><img src="purplestar-eye.svg" alt="PurpleStar SOS star eye logo"></div>
+      <h1>Cosmic Symbolic Operating System</h1>
+      <div class="init">INITIALIZING...</div>
+      <p class="lead">Enter the symbolic matrix. Explore astrology, numerology, nomenology, tarot, reflection, and the cosmic body through one connected interface.</p>
+
+      <div class="hero-grid">
+        <div class="terminal-card" aria-label="System status">
+          <div class="line"><span class="prompt">C:\&gt;</span><span>loading symbolic systems...</span></div>
+          <div class="line"><span class="prompt">[01]</span><span>ASTROLOGY ENGINE</span><span class="online">ONLINE</span></div>
+          <div class="line"><span class="prompt">[02]</span><span>NUMEROLOGY ENGINE</span><span class="online">ONLINE</span></div>
+          <div class="line"><span class="prompt">[03]</span><span>NOMENOLOGY ENGINE</span><span class="online">ONLINE</span></div>
+          <div class="line"><span class="prompt">[04]</span><span>TAROT + ASTRODICE</span><span class="online">ONLINE</span></div>
+          <div class="line"><span class="prompt">[05]</span><span>COSMIC BODY EXPLORER</span><span class="online">ONLINE</span></div>
+          <div class="line"><span class="prompt">C:\&gt;</span><span>ready for star traveler<span class="blink">_</span></span></div>
+        </div>
+        <aside class="info-card">
+          <h2>System Purpose</h2>
+          <p>Making the Mystical Practical through interactive symbolic learning, self-reflection, and pattern recognition.</p>
+          <div class="feature-list">
+            <span>Soul Constellation</span><span>SoulClock</span><span>Cosmic Casting</span><span>Saved reflections</span>
+          </div>
+        </aside>
+      </div>
+
+      <div class="actions">
+        <a class="btn primary" id="launchApp" href="./PurpleStarSOS.html">› Enter the Matrix</a>
+        <a class="btn" href="https://purplestar-tarot.com" target="_blank" rel="noopener noreferrer">✦ PurpleStar Tarot</a>
+      </div>
+
+      <nav class="nav" aria-label="Page sections">
+        <a href="#about">▸ About</a><a href="#guide">▸ Guide</a><a href="#connect">▸ Connect</a><a href="#notes">▸ Notes</a>
+      </nav>
+
+      <section class="section" id="about">
+        <h2>About PurpleStar SOS</h2>
+        <p>PurpleStar SOS is an interactive learning platform that brings symbolic languages together so their patterns, relationships, and synchronicities can be explored in one place.</p>
+        <p>Each system offers a different perspective. Together, they create a living network of interconnected symbols that can be explored one connection at a time.</p>
+      </section>
+
+      <section class="section" id="guide">
+        <h2>Star Traveler Guide</h2>
+        <p>Launch the application, create or open a saved Star Traveler, and move through the modules. Your information remains in the browser unless the application specifically provides an export option.</p>
+      </section>
+
+      <section class="section" id="connect">
+        <h2>Connect</h2>
+        <p>Email: <a href="mailto:daniela@purplestar-tarot.com">daniela@purplestar-tarot.com</a></p>
+        <p>Visit <a href="https://purplestar-tarot.com" target="_blank" rel="noopener noreferrer">PurpleStar Tarot</a> for readings, Cosmic Casting, updates, classes, events, and the wider PurpleStar project.</p>
+      </section>
+
+      <section class="section" id="notes">
+        <h2>Development Notes</h2>
+        <p>PurpleStar SOS is an evolving independent symbolic operating system. Features, calculations, modules, and interface elements may change as development continues.</p>
+      </section>
+    </div>
+  </main>
+  <footer>▣ ABOUT &nbsp; © <span id="year"></span> PurpleStar &nbsp; <a href="https://purplestar-tarot.com" target="_blank" rel="noopener noreferrer">purplestar-tarot.com</a></footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
