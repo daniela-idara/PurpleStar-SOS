@@ -51,20 +51,32 @@
     .btn:hover,.btn:focus-visible{transform:translate(3px,3px);box-shadow:3px 3px 0 var(--pink);background:rgba(34,245,255,.08);outline:none}
     .btn.primary{background:linear-gradient(180deg,#ff38c9,#ff55d5);color:#090010;border-color:var(--gold);box-shadow:7px 7px 0 var(--cyan)}
     .btn.primary:hover,.btn.primary:focus-visible{box-shadow:3px 3px 0 var(--cyan)}
-    .nav{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:30px 0 16px;border-top:1px solid rgba(34,245,255,.35);padding-top:16px}
+    .nav{position:sticky;top:0;z-index:12;display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:30px 0 16px;border-top:1px solid rgba(34,245,255,.35);padding:16px 0;background:rgba(8,0,15,.96);backdrop-filter:blur(8px);box-shadow:0 8px 18px rgba(0,0,0,.34)}
     .nav a{border:1px solid var(--cyan);padding:13px 10px;color:var(--cyan);text-align:center;text-decoration:none;font-weight:700;text-transform:uppercase;font-size:.86rem}
     .nav a:hover{background:rgba(34,245,255,.08)}
-    section{scroll-margin-top:20px}
+    section{scroll-margin-top:104px}
     .section{border:1px solid rgba(131,255,22,.45);background:rgba(0,8,5,.56);padding:20px;margin-top:14px}
     .section h2{margin:0 0 16px;color:var(--pink);font-size:1rem;text-transform:uppercase;letter-spacing:.06em}
     .section p{color:#72ff55;line-height:1.85;margin:0 0 14px}
     .section p:last-child{margin-bottom:0}
     .section a{color:var(--cyan);font-weight:700;text-decoration:none}
     .section a:hover,.section a:focus-visible{text-decoration:underline}
+
+    .section blockquote{margin:10px 0 18px;padding:14px 18px;border-left:4px solid var(--pink);background:rgba(255,57,201,.06);color:var(--lavender);font-weight:700}
+    .section h3,.section h4{color:var(--cyan);text-transform:uppercase;letter-spacing:.06em}
+    .section h3{margin:24px 0 12px;font-size:1rem}.section h3:first-child{margin-top:0}.section h4{margin:24px 0 10px;font-size:.9rem}
+    .compass-grid,.privacy-data-grid,.pixel-resource-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}
+    .compass-grid span,.privacy-data-grid span{border:1px solid rgba(34,245,255,.42);background:rgba(15,3,34,.72);padding:12px;color:var(--lavender);font-weight:700}
+    .pixel-resource-grid a{border:1px solid rgba(155,69,255,.7);background:rgba(15,3,34,.72);padding:16px;color:var(--cyan);text-decoration:none;display:grid;gap:5px}
+    .pixel-resource-grid a:hover{background:rgba(34,245,255,.08)}.pixel-resource-grid b{color:var(--cyan)}.pixel-resource-grid small{color:var(--muted)}.pixel-icon{color:var(--pink);font-size:1.2rem}
+    .privacy-lead,.privacy-closing,.terminal-box{border:1px solid rgba(155,69,255,.62);background:rgba(15,3,34,.72);padding:18px;margin:14px 0}
+    .privacy-exceptions{display:grid;grid-template-columns:1fr 1fr;gap:12px}.privacy-exceptions>div{border:1px solid rgba(34,245,255,.35);padding:15px;background:rgba(4,7,20,.62)}
+    .boot-signoff{border-top:1px solid rgba(34,245,255,.35);margin-top:22px;padding-top:18px}.awaiting{color:var(--pink)!important;font-weight:700}
+    .feedback-form{display:grid;gap:14px}.feedback-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.feedback-form label{display:grid;gap:7px;color:var(--cyan);font-weight:700}.feedback-form label span{color:var(--muted);font-weight:400}.feedback-form input,.feedback-form select,.feedback-form textarea{width:100%;border:1px solid rgba(155,69,255,.75);background:#100522;color:var(--lavender);padding:12px;font:inherit}.feedback-form textarea{min-height:140px;resize:vertical}.feedback-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px}.feedback-status,.feedback-email-line{color:var(--muted)!important;font-size:.88rem}.feedback-diagnostics-toggle{display:flex!important;align-items:center;grid-template-columns:auto 1fr!important}.feedback-diagnostics-toggle input{width:auto}.feedback-diagnostics{color:var(--muted);font-size:.8rem}.group-label{margin:28px 0 8px;color:var(--green);letter-spacing:.2em;font-weight:700;text-transform:uppercase}
     footer{text-align:center;color:var(--muted);padding:24px 10px 4px;font-size:.82rem;letter-spacing:.07em}
     footer a{color:var(--cyan);text-decoration:none}
-    @media(max-width:760px){.hero-grid,.actions{grid-template-columns:1fr}.nav{grid-template-columns:1fr 1fr}.frame{box-shadow:6px 6px 0 var(--pink),-6px -6px 0 rgba(34,245,255,.23)}.page{width:min(100% - 20px,1080px)}.logo{margin-top:0}}
-    @media(max-width:460px){.nav{grid-template-columns:1fr}.build{font-size:.72rem}.frame{padding:20px 16px}.logo img{width:min(300px,82vw)}.btn{font-size:.88rem}}
+    @media(max-width:760px){.hero-grid,.actions,.feedback-actions,.feedback-grid,.privacy-exceptions{grid-template-columns:1fr}.compass-grid,.privacy-data-grid,.pixel-resource-grid{grid-template-columns:1fr 1fr}.nav{grid-template-columns:repeat(2,1fr)}.frame{box-shadow:6px 6px 0 var(--pink),-6px -6px 0 rgba(34,245,255,.23)}.page{width:min(100% - 20px,1080px)}.logo{margin-top:0}}
+    @media(max-width:460px){.nav,.compass-grid,.privacy-data-grid,.pixel-resource-grid{grid-template-columns:1fr}.build{font-size:.72rem}.frame{padding:20px 16px}.logo img{width:min(300px,82vw)}.btn{font-size:.88rem}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.blink{animation:none}.btn{transition:none}}
   </style>
 </head>
@@ -73,7 +85,7 @@
 <div class="page">
   <main class="frame">
     <div class="content">
-      <div class="build">PURPLESTAR SOS v2.0 // BUILD 2.0.95</div>
+      <div class="build">PURPLESTAR SOS v2.0 // BUILD 2.0.96</div>
       <div class="logo"><img src="purplestar-eye.svg" alt="PurpleStar SOS star eye logo"></div>
       <h1>Cosmic Symbolic Operating System</h1>
       <div class="init">INITIALIZING...</div>
@@ -99,38 +111,115 @@
       </div>
 
       <div class="actions">
-        <a class="btn primary" id="launchApp" href="./PurpleStarSOS.html">› Enter the Matrix</a>
+        <a class="btn primary" href="walkthrough.html">▶ WATCH THE SNEAK PEEK</a>
         <a class="btn" href="https://purplestar-tarot.com" target="_blank" rel="noopener noreferrer">✦ PurpleStar Tarot</a>
       </div>
 
-      <nav class="nav" aria-label="Page sections">
-        <a href="#about">▸ About</a><a href="#guide">▸ Guide</a><a href="#connect">▸ Connect</a><a href="#notes">▸ Notes</a>
+      <nav class="nav" aria-label="About page sections">
+        <a href="#about">▸ About</a><a href="#guide">▸ Guide</a><a href="#privacy">🔒 Privacy</a><a href="#connect">▸ Connect</a><a href="#notes">▸ Notes</a>
       </nav>
 
       <section class="section" id="about">
+        <div class="group-label">About</div>
         <h2>About PurpleStar SOS</h2>
         <p>PurpleStar SOS is an interactive learning platform that brings symbolic languages together so their patterns, relationships, and synchronicities can be explored in one place.</p>
+        <p>Its purpose is simple: Making the Mystical Practical.</p>
+        <p>Astrology. Numerology. Nomenology. Tarot. Psychology. Mythology. Nature. Color. The Human Body.</p>
         <p>Each system offers a different perspective. Together, they create a living network of interconnected symbols that can be explored one connection at a time.</p>
+        <p>Rather than studying each symbolic language separately, PurpleStar SOS reveals where they intersect, overlap, and reinforce one another. Every connection becomes another way to explore the larger symbolic picture.</p>
+        <p>These symbols aren't just concepts to memorize. They become tools for self-discovery, reflection, growth, and ultimately the creation of the most meaningful character you'll ever build... Yourself!</p>
+
+        <h3>Why I Made This</h3>
+        <blockquote>It’s my brain... organized.</blockquote>
+        <p>Years of books. Thousands of pages of notes. Software projects. Conversations. Readings. Questions. Research. A lifelong curiosity about the many ways humans have searched for meaning.</p>
+        <p>This is not just some random AI-generated cyber-gunk. It is a compiled database of books, websites, infographics, personal notes, and symbolic research that I have organized into a system that allows me to break inside my own mainframe.</p>
+        <p>Over time, the boundaries between subjects disappeared. A tarot card connects to a planet. A planet connects to a zodiac sign. A zodiac sign echoes through mythology. A number reveals an archetype. A name carries language, history, and symbolism.</p>
+        <p>The vision of a wheel within a wheel offers a fitting image. Each wheel represents a symbolic language. Each turns independently while remaining connected to every other wheel.</p>
+
+        <h3>About Me</h3>
+        <p>I have been obsessed with astrology and web design for as long as I can remember.</p>
+        <p>I wrote my first BASIC program when I was around six or seven years old, and I started looking at astrology when I was around nine.</p>
+        <p>Years of MySpace coding led to me owning my own domain while I was still in junior high. From there came coding bootcamps, working in tech, and continuing to build websites and software projects.</p>
+        <p>Building PurpleStar SOS is reminiscent of the MySpace days. It gives me a place to code, experiment, organize information, and make the kind of website I want to explore.</p>
+
+        <h3>Why PurpleStar?</h3>
+        <p>Stars emit an entire spectrum of light, yet the human eye does not perceive stars as truly green or truly purple. That scientific curiosity became a symbolic reminder that some of the most meaningful aspects of life are not immediately visible.</p>
+        <p>Green represents the heart, growth, healing, and relationship. Purple represents intuition, imagination, wisdom, and mystery.</p>
+        <p>PurpleStar invites us to look beyond the obvious and explore the unseen connections woven throughout our lives.</p>
+
+        <h3>What I Build</h3>
+        <p>I build symbolic systems.</p>
+        <p>I study the languages people have used throughout history to understand themselves and the world around them. PurpleStar SOS is the place where those languages meet.</p>
+        <p>Every module is another lens. Every connection offers another perspective. Every perspective contributes to a larger understanding.</p>
       </section>
 
       <section class="section" id="guide">
-        <h2>Star Traveler Guide</h2>
-        <p>Launch the application, create or open a saved Star Traveler, and move through the modules. Your information remains in the browser unless the application specifically provides an export option.</p>
+        <div class="group-label">Guide</div>
+        <h2>The Cosmic Compass</h2>
+        <p>PurpleStar SOS is organized as a celestial compass. Each rotating ring represents a symbolic language. Together they form an interconnected map of perspectives, patterns, and possibilities.</p>
+        <div class="compass-grid"><span>🪐 ASTROLOGY</span><span>🔢 NUMEROLOGY</span><span>🎴 TAROT</span><span>✍ NOMENOLOGY</span><span>🧠 PSYCHOLOGY</span><span>🌈 CHAKRAS</span><span>🌿 NATURE</span><span>🎨 COLOR</span><span>💎 CRYSTALS</span><span>🧬 COSMIC BODY</span><span>📝 JOURNAL</span><span>🧩 SOUL MATRIX</span></div>
+        <h3>Read Me</h3>
+        <div class="terminal-box"><strong>CURRENT VERSION</strong><p>PurpleStar SOS v2.0 — Build 2.0.96</p><strong>CURRENT MODULES</strong><p>Soul Matrix · Cosmic Grid Matrix · Numerology · Nomenology · Cosmic Casting · Pixel Tarot · Learn Libraries · Cosmic Body Explorer · Reflection Journal · Saved History</p><strong>CURRENT FOCUS</strong><p>Expanding symbolic knowledge into an interactive learning experience where every module connects through a shared symbolic framework.</p></div>
+      </section>
+
+      <section class="section" id="privacy">
+        <div class="group-label">Privacy</div>
+        <h2>🔒 Privacy &amp; Local Data</h2>
+        <div class="privacy-lead"><strong>YOUR SYMBOLIC WORK BELONGS TO YOU.</strong></div>
+        <h4>Privacy First</h4>
+        <p>Everything you enter, including notes, reflections, saved analyses, Star Traveler profiles, journal entries, personal observations, and settings, is stored locally on your device through your browser.</p>
+        <p>PurpleStar SOS does not upload this information to a PurpleStar SOS server or save it in an internal cloud database.</p>
+        <h4>Local Information</h4>
+        <div class="privacy-data-grid"><span>STAR TRAVELER PROFILES</span><span>SAVED ANALYSES</span><span>PERSONAL NOTES</span><span>REFLECTIONS</span><span>JOURNAL ENTRIES</span><span>SAVED READINGS</span><span>SAVED CALCULATIONS</span><span>PERSONAL SETTINGS</span></div>
+        <h4>Symbolic Processing</h4>
+        <p>PurpleStar SOS performs symbolic calculations through the correspondences, interpretation framework, and synthesis system built specifically for this application. Your personal entries are not processed through third-party artificial intelligence systems during normal application use.</p>
+        <h4>Public Online Sources</h4>
+        <p>Two features retrieve requested information from free, publicly available online web sources:</p>
+        <div class="privacy-exceptions"><div><strong>1 // NAME SEARCH</strong><p>Name meanings, history, and related references are retrieved from public online web sources.</p></div><div><strong>2 // ZODIAC NATAL CHARTS</strong><p>Astronomical and natal chart calculation information is retrieved from public free online web sources to generate the requested chart.</p></div></div>
+        <p>These online lookups are separate from your locally stored notes, saved analyses, and Star Traveler records.</p>
+        <h4>A Private Symbolic Browser</h4>
+        <p>Using PurpleStar SOS is similar to using a private browser. Instead of creating accounts across many websites and scattering information between multiple tabs, PurpleStar SOS brings symbolic tools into one organized workspace and stores your saved work locally on your own device.</p>
+        <div class="privacy-closing"><p><strong>PurpleStar SOS was built to organize symbolic information, not collect personal information.</strong></p><p>Your notes remain yours.<br>Your saved analyses remain yours.<br>Your Star Traveler profiles remain yours.<br>Your symbolic journey remains yours.</p><p><strong>PURPLESTAR SOS WORKS FOR YOU, NOT THE OTHER WAY AROUND.</strong></p></div>
       </section>
 
       <section class="section" id="connect">
-        <h2>Connect</h2>
-        <p>Email: <a href="mailto:daniela@purplestar-tarot.com">daniela@purplestar-tarot.com</a></p>
-        <p>Visit <a href="https://purplestar-tarot.com" target="_blank" rel="noopener noreferrer">PurpleStar Tarot</a> for readings, Cosmic Casting, updates, classes, events, and the wider PurpleStar project.</p>
+        <div class="group-label">Connect</div>
+        <h2>Resources</h2>
+        <div class="pixel-resource-grid">
+          <a href="https://purplestar-tarot.com" target="_blank" rel="noopener"><span class="pixel-icon">▣</span><b>WEBSITE</b><small>purplestar-tarot.com</small></a>
+          <a href="https://purplestar-tarot.com/cosmic-casting-guide" target="_blank" rel="noopener"><span class="pixel-icon">▤</span><b>COSMIC CASTING GUIDE</b><small>Support The Book</small></a>
+          <a href="https://purplestar-tarot.com/cosmic-clarity-calls" target="_blank" rel="noopener"><span class="pixel-icon">⚄</span><b>BOOK A READING</b><small>Cosmic Clarity Calls</small></a>
+          <a href="https://www.youtube.com/@purplestartarot9" target="_blank" rel="noopener"><span class="pixel-icon">▶</span><b>YOUTUBE</b><small>@purplestartarot9</small></a>
+          <a href="https://www.instagram.com/PurpleStarTarot9" target="_blank" rel="noopener"><span class="pixel-icon">◎</span><b>INSTAGRAM</b><small>@PurpleStarTarot9</small></a>
+          <a href="https://www.tiktok.com/@PurpleStar.Tarot" target="_blank" rel="noopener"><span class="pixel-icon">♫</span><b>TIKTOK</b><small>@PurpleStar.Tarot</small></a>
+          <a href="https://daniela-idara.github.io/PurpleStar-SOS/" target="_blank" rel="noopener"><span class="pixel-icon">▣</span><b>PURPLESTAR SOS</b><small>App Website</small></a>
+          <a href="mailto:daniela@purplestar-tarot.com"><span class="pixel-icon">✉</span><b>CONTACT</b><small>daniela@purplestar-tarot.com</small></a>
+        </div>
+        <h3>Comments, Questions or Suggestions?</h3>
+        <p>Contact me with app feedback, feature ideas, questions, or bug reports.</p>
+        <form class="feedback-form" id="appFeedbackForm">
+          <div class="feedback-grid"><label>NAME <span>(OPTIONAL)</span><input autocomplete="name" id="feedbackName" name="name" placeholder="Your name"></label><label>EMAIL <span>(OPTIONAL)</span><input autocomplete="email" id="feedbackEmail" name="email" placeholder="Your email" type="email"></label></div>
+          <label>CATEGORY<select id="feedbackCategory" name="category"><option>General Feedback</option><option>Feature Suggestion</option><option>Bug Report</option><option>Question</option></select></label>
+          <label>MESSAGE<textarea id="feedbackMessage" name="message" placeholder="Share your comments, questions, or suggestions..." required></textarea></label>
+          <div class="feedback-actions"><button class="btn primary" type="submit">✉ OPEN FEEDBACK EMAIL</button><a class="btn" href="mailto:daniela@purplestar-tarot.com?subject=PurpleStar%20SOS%20-%20App%20Feedback">EMAIL DIRECTLY</a></div>
+          <p class="feedback-status">The form opens your default email app with the subject and message prepared. You can review it before sending.</p>
+        </form>
+        <p class="feedback-email-line">EMAIL: <a href="mailto:daniela@purplestar-tarot.com?subject=PurpleStar%20SOS%20-%20App%20Feedback">daniela@purplestar-tarot.com</a></p>
       </section>
 
       <section class="section" id="notes">
-        <h2>Development Notes</h2>
-        <p>PurpleStar SOS is an evolving independent symbolic operating system. Features, calculations, modules, and interface elements may change as development continues.</p>
+        <div class="group-label">Notes</div>
+        <h2>Dedication</h2>
+        <p><strong>Dedicated to the curious.</strong></p>
+        <p>To the seekers, readers, researchers, artists, scientists, dreamers, skeptics, and everyone who has ever wondered whether a hidden pattern was waiting to be discovered.</p>
+        <h3>Philosophy</h3>
+        <p>No single map can fully describe a human life. Every symbolic system offers another way of exploring experience.</p>
+        <p>PurpleStar SOS brings those systems together into one place where relationships become visible, curiosity becomes a practice, and learning becomes an ongoing journey.</p>
+        <div class="boot-signoff"><p>✓ MATRIX INITIALIZED<br>✓ SYMBOLIC LIBRARIES LOADED<br>✓ COSMIC COMPASS ONLINE</p><p class="awaiting">AWAITING CURIOSITY...</p><p><strong>Daniela Archibong</strong><br>Cosmic Cleric &amp; Dice Diviner<br>PurpleStar Tarot</p><p>© PurpleStar 2026</p></div>
       </section>
     </div>
   </main>
-  <footer>▣ ABOUT &nbsp; © <span id="year"></span> PurpleStar SOS &nbsp; <a href="https://purplestar-tarot.com" target="_blank" rel="noopener noreferrer">purplestar-tarot.com</a></footer>
+  <footer>▣ ABOUT &nbsp; © <span id="year"></span> PurpleStar &nbsp; <a href="https://purplestar-tarot.com" target="_blank" rel="noopener noreferrer">purplestar-tarot.com</a></footer>
 </div>
 <script src="script.js"></script>
 </body>
