@@ -1,11 +1,4 @@
-const APP_FILE = "./PurpleStarSOS.html";
-
 document.getElementById("year").textContent = new Date().getFullYear();
-const launchApp = document.getElementById("launchApp");
-launchApp.href = APP_FILE;
-launchApp.addEventListener("click", () => {
-  launchApp.textContent = "› OPENING SYSTEM...";
-});
 
 const canvas = document.getElementById("matrix");
 const ctx = canvas.getContext("2d");
@@ -38,3 +31,23 @@ function draw() {
 resize();
 addEventListener("resize", resize);
 if (!matchMedia("(prefers-reduced-motion: reduce)").matches) draw();
+
+const feedbackForm = document.getElementById("appFeedbackForm");
+if (feedbackForm) {
+  feedbackForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const name = document.getElementById("feedbackName").value.trim();
+    const email = document.getElementById("feedbackEmail").value.trim();
+    const category = document.getElementById("feedbackCategory").value;
+    const message = document.getElementById("feedbackMessage").value.trim();
+    const subject = `PurpleStar SOS - ${category}`;
+    const body = [
+      `Category: ${category}`,
+      name ? `Name: ${name}` : "",
+      email ? `Reply email: ${email}` : "",
+      "",
+      message
+    ].filter(Boolean).join("\n");
+    window.location.href = `mailto:daniela@purplestar-tarot.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+}
