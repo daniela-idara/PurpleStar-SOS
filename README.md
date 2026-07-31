@@ -2,7 +2,7 @@
 
 ## Symbolic Operating System
 
-This repository contains the public GitHub Pages landing page for PurpleStar SOS. The application itself is not hosted in this repository.
+This repository contains the public GitHub Pages landing page for PurpleStar SOS. The application itself is not hosted in this repository yet.
 
 The landing page includes:
 

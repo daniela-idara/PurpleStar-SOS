@@ -1,0 +1,12 @@
+Add your PurpleStar SOS screenshots to this folder using these exact filenames:
+
+module01-soul-constellation.png
+module02-zodiac-natal-matrix.png
+module03-numerology-engine.png
+module04-nomenology-terminal.png
+module05-cosmic-casting.png
+module06-soulclock.png
+module07-pixel-tarot.png
+module08-cosmic-body-explorer.png
+
+The placeholders on walkthrough.html will automatically be replaced when these files are present.
