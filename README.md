@@ -31,4 +31,4 @@ PurpleStar SOS is under active development. The public app link can be added lat
 
 ## License
 
-Copyright © 2026 Daniela Archibong. All Rights Reserved.
+Copyright © PurpleStar SOS 2026 Daniela Archibong. All Rights Reserved.
