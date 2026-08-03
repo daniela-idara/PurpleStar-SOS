@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="70 0 500 460">
+<polygon points="320,18 390,160 548,183 434,294 461,452 320,378 179,452 206,294 92,183 250,160" fill="#7637ff"/>
+<polygon points="320,78 371,181 486,198 403,279 423,394 320,340 217,394 237,279 154,198 269,181" fill="#3720d8"/>
+<polygon points="320,118 356,191 437,203 378,260 392,341 320,303 248,341 262,260 203,203 284,191" fill="#ff73dc"/>
+<path d="M182 236 L214 196 L260 168 L320 154 L380 168 L426 196 L458 236 L426 276 L380 304 L320 318 L260 304 L214 276 Z" fill="#fff8de" stroke="#050505" stroke-width="16"/>
+<rect x="270" y="186" width="100" height="100" fill="#8cff00"/><rect x="286" y="170" width="68" height="132" fill="#8cff00"/><rect x="254" y="202" width="132" height="68" fill="#8cff00"/>
+<rect x="286" y="186" width="68" height="100" fill="#40d900"/><rect x="270" y="202" width="100" height="68" fill="#40d900"/>
+<rect x="302" y="202" width="36" height="68" fill="#0b1607"/><rect x="286" y="218" width="68" height="36" fill="#0b1607"/><rect x="310" y="210" width="20" height="20" fill="#d8ffb7"/>
+</svg>

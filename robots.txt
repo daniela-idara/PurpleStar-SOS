@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://daniela-idara.github.io/PurpleStar-SOS/sitemap.xml
